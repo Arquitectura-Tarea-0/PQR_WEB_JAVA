@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header> 
+            <h2 id="logo">PQR</h2>
+            
+             <div id="linksHeaderSection">
+                <a href="index.html" class="linkHeader">Registarse</a>
+                <a href="#" class="linkHeader selected">Iniciar sesión</a>
+            </div>
+            
+        </header>
+        
+        <script>
+            function validarContraseña(){
+                var password, password2;
+                password = document.getElementById('userPassword');
+                password2 = document.getElementById('userPasswordRepeat');
+                password.onchange = password2.onkeyup = passwordMatch;
+
+                function passwordMatch() {
+                    if(password.value !== password2.value){
+                        password2.setCustomValidity('Las contraseñas no coinciden');
+                    }else{
+                        password2.setCustomValidity('');
+                    } 
+                }
+            }
+        </script>
+        
+        <div id="registerDiv" class="main">
+            <form id="registerFrom" action="leer_formulario_login.do" method="POST">
+                <h2 style="">Registro</h2>
+                
+                <div class="lableInputGroup">
+                    <label for="userName">Nombre</label>
+                    <input id="userName" type="text" placeholder="Ingresa tu nombre" name="name" value="" required/>
+                </div>
+                
+                <div class="lableInputGroup">
+                    <label for="userEmail">Emial</label>
+                    <input id="userEmail" type="email" placeholder="Ingresa tu email" name="email" value="" required/>
+                </div>
+                
+                <div class="lableInputGroup">
+                    <label for="userPassword">Contraseña</label>
+                    <input id="userPassword" type="password" placeholder="Ingresa tu contraseña" name="password" value="" required/>
+                </div> 
+                
+                <div class="lableInputGroup">
+                    <label for="userPasswordrepeat">Repetir Contraseña</label>
+                    <input id="userPasswordRepeat" oninput="validarContraseña()" type="password" placeholder="Repite tu contraseña" value="" required/>
+                </div> 
+                
+                <button type="submit" id="registerButton">Registrarse</button>
+            </form>
+        </div>
+             
+    </body>
+</html>
+
+

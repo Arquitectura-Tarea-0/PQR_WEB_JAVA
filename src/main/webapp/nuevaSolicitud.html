@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <h2 id="logo">PQR</h2>
+            
+            <div id="linksHeaderSection">
+                <a href="#" class="linkHeader selected">Crear PQR</a>
+                <a href="listaPQRs.html" class="linkHeader">Mis PQRs</a>
+            </div>
+            
+        </header>
+        
+        <div id="pqrDiv" class="main">
+            <form id="pqrFrom" action="leer_formulario_login.do" method="POST">
+                <h2 style="">Nueva Solicitud</h2>
+                
+                <div id="asuntoTipoInlineGroup">
+                    <div class="lableInputGroup">
+                        <label for="asuntoPQR">Asunto</label>
+                        <input id="asuntoPQR" type="email" placeholder="Escribe un asunto" name="asuntoPQR" value="" required/>
+                    </div>
+                
+                    <div class="lableInputGroup">
+                        <label for="tipoPQR">Tipo de solicitud</label>
+                        <select id="tipoPQR" name="tipoPQR" required>
+                            <option value="value1">Petición</option> 
+                            <option value="value2">Queja</option>
+                            <option value="value3">Reclamo</option>
+                        </select>
+                    </div> 
+                </div>
+                
+                
+                <div class="lableInputGroup">
+                    <textarea id="textPQR" name="textPQR" rows="10" cols="50"></textarea>
+                </div>
+                
+                <button type="submit" id="crearPQRButton">Crear solicitud</button>
+            </form>
+        </div>
+             
+    </body>
+</html>
+
