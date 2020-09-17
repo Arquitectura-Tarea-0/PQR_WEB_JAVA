@@ -5,28 +5,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="css/login_style.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
+
     <body>
-        <div class="contenido">
-            <form action="leer_formulario_login.do" method="POST" id="form-iniciar-sesion">
-                <h2 style="font-weight: bolder;">Iniciar sesión</h2>
-                <h2 style="font-weight: bolder;">Agenda Ejecutiva</h2>
-                <input type="text" placeholder="Ingresa Usuario" name="user" id="nombre" value="" required/>
-                <br>
-                <br>
-                <input type="password" placeholder="Ingresa Contraseña" name="password" id="Contraseña" value="" required/>
-                <br>
-                <br>
-                <button type="submit" id="button-login">Iniciar Sesión</button>
+        <header>
+            <h2 id="logo">PQR</h2>
+
+            <div id="linksHeaderSection">
+                <a href="#" class="linkHeader selected">Iniciar sesión</a>
+                <a href="registro.html" class="linkHeader">Registarse</a>
+            </div>
+
+        </header>
+
+        <div id="loginDiv" class="main">
+            <form id="loginFrom" action="procesarLoginForm.do" method="POST">
+                <h2 style="">Iniciar sesión</h2>
+
+                <div class="lableInputGroup">
+                    <label for="userEmail">Emial</label>
+                    <input id="userEmail" type="email" placeholder="Ingresa tu email" name="email" value="" required/>
+                </div>
+
+                <div class="lableInputGroup">
+                    <label for="userPassword">Contraseña</label>
+                    <input id="userPassword" type="password" placeholder="Ingresa tu contraseña" name="password" value="" required/>
+                </div>
+
+                <button type="submit" id="loginButton">Ingresar</button>
             </form>
-            <br>
-            <form action="ir_recuperar_contraseña.do" method="POST" id="form-ir-recuperar-contraseña">
-                <button type="submit" id="button-ir-recuperar-contraseña">Olvide mi contraseña</button>
-            </form>
-            <p class="message">No estas registrado? <a href="vistaRegistroNuevoUsuario.jsp">Crear cuenta</a></p>
         </div>
+
     </body>
 </html>
-
